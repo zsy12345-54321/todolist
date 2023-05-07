@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Four-Quadrant To-Do List</title>
+    <link rel="stylesheet" href="{{url_for ('static',filename = 'css/style.css')}}">
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    
+    <div class="title">
+      <h1>To-Do List</h1>
+    </div>     
+  
+    <div class="container">
+      <div class="quadrant" id="q1">
+        <h2>Important and Urgent</h2>
+        <div class="task-container">
+          <ul id="list1"></ul>
+          <input type="text" id="input1" placeholder="Add task...">
+        </div>
+      </div>
+      <div class="quadrant" id="q2">
+        <h2>Important but Not Urgent</h2>
+        <div class="task-container">
+          <ul id="list2"></ul>
+          <input type="text" id="input2" placeholder="Add task...">
+        </div>
+      </div>
+      <div class="quadrant" id="q3">
+        <h2>Not Important but Urgent</h2>
+        <div class="task-container">
+          <ul id="list3"></ul>
+          <input type="text" id="input3" placeholder="Add task...">
+        </div>
+      </div>
+      <div class="quadrant" id="q4">
+        <h2>Not Important and Not Urgent</h2>
+        <div class="task-container">
+          <ul id="list4"></ul>
+          <input type="text" id="input4" placeholder="Add task...">
+        </div>
+      </div>
+    </div>
+    <script src="{{url_for ('static',filename = 'js/main.js')}}"></script>
+  </body>
+</html>

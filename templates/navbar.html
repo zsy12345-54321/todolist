@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color: #333;
+      padding: 10px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 16px;
+    }
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div>
+      <a href="{{ url_for('index') }}">Home</a>
+    </div>
+    {% if current_user.is_authenticated %}
+      <div>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      </div>
+    {% else %}
+      <div>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
