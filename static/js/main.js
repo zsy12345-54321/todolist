@@ -8,7 +8,7 @@ const input2 = document.getElementById("input2");
 
 // Quadrant 3: Not Important but Urgent
 const list3 = document.getElementById("list3");
-const input3 = document.getElementById("input3");
+const input3 = document.getElementById("input3"); 
 
 // Quadrant 4: Not Important and Not Urgent
 const list4 = document.getElementById("list4");
@@ -31,15 +31,14 @@ function addTask(input, list) {
   if (task !== "") {
     createTask(task, list);
     input.value = "";
+    document.getElementById("list").submit();
   }
 }
 // Function to delete a task from the list
 function deleteTask(target) {
   const li = target.parentElement;
   li.classList.add("fade-out");
-  setTimeout(() => {
-    li.remove();
-  }, 500);
+  setTimeout(() => {li.remove();}, 500);
 }
 
 // Function to edit a task in the list
@@ -123,3 +122,4 @@ function showMessage(message) {
     messageElement.remove();
   }, 2500);
 }
+document.addEventListener('DOMContentLoaded', fetchTasks);
