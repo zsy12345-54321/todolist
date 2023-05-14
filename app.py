@@ -45,8 +45,6 @@ def login():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    print('index starting')
-    print(request.method)
     if current_user.is_authenticated:
         tasks_q1 = [task for task in current_user.tasks if task.quadrant == 1]
         tasks_q2 = [task for task in current_user.tasks if task.quadrant == 2]
@@ -59,8 +57,6 @@ def index():
             db.session.add(task)
             db.session.commit()
             flash('Task added successfully!', 'success')
-            for task in current_user.tasks:
-                print(f'Task ID: {task.id}, Description: {task.description}, Quadrant: {task.quadrant}')
             return redirect(url_for('index'))
         return render_template('index.html', tasks_q1=tasks_q1, tasks_q2=tasks_q2, tasks_q3=tasks_q3, tasks_q4=tasks_q4)
     else:
