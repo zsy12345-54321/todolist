@@ -113,3 +113,11 @@ li button:hover {
 li .edit {
   margin-right: 5px;
 }
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* Adjust the column layout for larger screens */
+    grid-template-rows: repeat(2, 1fr); /* Adjust the row layout for larger screens */
+    margin: 5px auto; /* Adjust the margin for larger screens */
+  }
+}
